@@ -50,23 +50,24 @@
                     </div>
                 </a>
                 
-                <button type="button" onclick="toggleCart()" aria-label="Abrir carrito" class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white shadow[...]
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="[...]
+                <button type="button" onclick="toggleCart()" aria-label="Abrir carrito" class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg shadow-blue-600/50 transition hover:bg-blue-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="8" cy="21" r="1"></circle>
                         <circle cx="19" cy="21" r="1"></circle>
                         <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
                     </svg>
-                    <span id="cart-badge" class="absolute -top-2 -right-2 hidden h-6 min-w-6 items-center justify-center rounded-full bg-red-500 px-1.5 text-xs font-black text-white shadow-md">0</[...]
+                    <span id="cart-badge" class="absolute -top-2 -right-2 hidden h-6 min-w-6 items-center justify-center rounded-full bg-red-500 px-1.5 text-xs font-black text-white shadow-md">0</span>
                 </button>
             </div>
             
             <div class="relative mx-auto max-w-7xl px-3 pb-2 sm:px-6 lg:px-8">
-                <nav class="mx-auto flex gap-2 rounded-lg bg-white/5 p-2 backdrop-blur-sm">
-                    <a href="#inicio" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-200 hover:bg-blue-600/30 round[...]
-                    <a href="#menu" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-200 hover:bg-blue-600/30 rounded[...]
-                    <a href="{{ route('admin.products.index') }}" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-20[...]
-                    <a href="https://wa.me/584141427822" target="_blank" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition dura[...]
-                    <a href="https://www.instagram.com/la_bambucha_burguer/" target="_blank" rel="noreferrer" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black upp[...]
+                <nav class="mx-auto flex gap-2 rounded-lg bg-white/5 p-2 backdrop-blur-sm overflow-x-auto no-scrollbar">
+                    <a href="#inicio" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-200 hover:bg-blue-600/30 rounded-lg">Inicio</a>
+                    <a href="#menu" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-200 hover:bg-blue-600/30 rounded-lg">Menú</a>
+                    <a href="{{ route('admin.products.index') }}" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-200 hover:bg-blue-600/30 rounded-lg">Admin</a>
+                    <a href="{{ route('admin.zones.index') }}" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-200 hover:bg-blue-600/30 rounded-lg">🚗 Zonas</a>
+                    <a href="https://wa.me/584141427822" target="_blank" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-200 hover:bg-blue-600/30 rounded-lg">WhatsApp</a>
+                    <a href="https://www.instagram.com/la_bambucha_burguer/" target="_blank" rel="noreferrer" class="flex-1 flex h-10 items-center justify-center text-center text-xs font-black uppercase tracking-wider transition duration-200 hover:bg-blue-600/30 rounded-lg">Instagram</a>
                 </nav>
             </div>
         </div>
@@ -78,7 +79,7 @@
         
         <div class="relative mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1fr_0.85fr]">
             <div class="text-center md:text-left">
-                <div class="mb-6 inline-flex items-center gap-3 rounded-lg border border-blue-600/50 bg-blue-600/10 px-6 py-3 text-sm font-black uppercase tracking-wider text-white shadow-lg shado[...]
+                <div class="mb-6 inline-flex items-center gap-3 rounded-lg border border-blue-600/50 bg-blue-600/10 px-6 py-3 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-blue-600/20">
                     <span class="h-3 w-3 rounded-full bg-blue-600"></span>
                     Premium Grill Experience
                 </div>
@@ -92,10 +93,10 @@
                 </p>
                 
                 <div class="mt-10 grid gap-4 sm:grid-cols-2 md:max-w-2xl">
-                    <a href="#menu" class="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-sm font-black uppercase tracking-widest text-white shadow-lg shadow-b[...]
+                    <a href="#menu" class="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-sm font-black uppercase tracking-widest text-white shadow-lg shadow-blue-600/50 transition hover:bg-blue-700">
                         Ver Menú
                     </a>
-                    <a href="https://wa.me/584141427822" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-blue-600 bg-transparent px[...]
+                    <a href="https://wa.me/584141427822" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-blue-600 bg-transparent px-8 py-4 text-sm font-black uppercase tracking-widest text-white transition hover:bg-blue-600/20">
                         Ordenar Ahora
                     </a>
                 </div>
@@ -103,7 +104,7 @@
             
             <div class="relative mx-auto hidden max-w-md items-center justify-center md:flex">
                 <div class="absolute h-96 w-96 rounded-full bg-blue-600/20 blur-3xl"></div>
-                <div class="relative w-72 h-72 rounded-full bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center text-white font-black text-5xl shadow-2xl border-4 border-[...]
+                <div class="relative w-72 h-72 rounded-full bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center text-white font-black text-5xl shadow-2xl border-4 border-blue-400/30">
                     LB
                 </div>
             </div>
@@ -126,9 +127,9 @@
 
             <div class="mb-10 rounded-lg border border-blue-600/30 bg-white/5 p-3 shadow-lg backdrop-blur-sm">
                 <div class="flex gap-3 overflow-x-auto no-scrollbar">
-                    <button type="button" data-filter="all" onclick="filterMenu('all')" class="shrink-0 rounded-lg border-2 border-blue-600 bg-blue-600 px-5 py-2 text-xs font-black uppercase tran[...]
-                    <button type="button" data-filter="combos" onclick="filterMenu('combos')" class="shrink-0 rounded-lg border-2 border-blue-600/30 bg-transparent px-5 py-2 text-xs font-black up[...]
-                    <button type="button" data-filter="hamburguesas" onclick="filterMenu('hamburguesas')" class="shrink-0 rounded-lg border-2 border-blue-600/30 bg-transparent px-5 py-2 text-xs f[...]
+                    <button type="button" data-filter="all" onclick="filterMenu('all')" class="shrink-0 rounded-lg border-2 border-blue-600 bg-blue-600 px-5 py-2 text-xs font-black uppercase transition hover:bg-blue-700">Todos</button>
+                    <button type="button" data-filter="combos" onclick="filterMenu('combos')" class="shrink-0 rounded-lg border-2 border-blue-600/30 bg-transparent px-5 py-2 text-xs font-black uppercase text-gray-300 transition hover:border-blue-600/60">Combos</button>
+                    <button type="button" data-filter="hamburguesas" onclick="filterMenu('hamburguesas')" class="shrink-0 rounded-lg border-2 border-blue-600/30 bg-transparent px-5 py-2 text-xs font-black uppercase text-gray-300 transition hover:border-blue-600/60">Hamburguesas</button>
                 </div>
             </div>
 
@@ -146,7 +147,7 @@
     <div id="cart-drawer" class="fixed inset-0 z-50 transition-all duration-300 opacity-0 invisible">
         <div onclick="toggleCart()" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
         
-        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-black border-l-2 border-blue-600 p-6 flex flex-col shadow-2xl shadow-blue-600/20 transform translate-x-full transition-trans[...]
+        <div id="cart-container" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-black border-l-2 border-blue-600 p-6 flex flex-col shadow-2xl shadow-blue-600/20 transform translate-x-full transition-transform duration-300">
             
             <div class="flex items-center justify-between border-b border-blue-600/30 pb-4 mb-4">
                 <div class="flex items-center gap-2">
@@ -207,9 +208,9 @@
                     <span class="text-xs font-black uppercase text-gray-400">Equivalente Bs:</span>
                     <span id="total-bs" class="text-base font-black text-white">Bs 0.00</span>
                 </div>
-                <button onclick="sendOrderWhatsApp()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-lg font-black uppercase tracking-wider shadow-lg shadow-blue-600/50 trans[...]
+                <button onclick="sendOrderWhatsApp()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-lg font-black uppercase tracking-wider shadow-lg shadow-blue-600/50 transition flex items-center justify-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.8[...]
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.8-1.023-1.31-1.735-1.437-2.012-.127-.277-.04-.427.085-.566.126-.14.28-.347.42-.52.14-.174.186-.286.279-.476.095-.191.047-.359-.024-.502-.071-.144-1.025-2.467-1.404-3.378-.377-.92-.756-.763-.825-.773-.069-.01-.148-.01-.227-.01-.078 0-.203.03-.31.146-.107.116-.408.399-.408.975s.408.902.452.966c.043.064.779 1.183 1.888 1.87 1.1.686 1.925.597 2.273.442.348-.155.553-.34.553-.426 0-.087.088-.232.195-.376.107-.145.536-.687.674-.923.137-.236.275-.204.46-.122.184.082 1.189.559 1.394.661.205.102.342.153.388.238.046.085.046.49-.087.943z"/>
                     </svg>
                     Enviar Pedido
                 </button>
@@ -221,7 +222,7 @@
     <script>
         const TASA_CAMBIO = 40.00;
         const DEFAULT_PRODUCTS = @json($products->toArray());
-        const DELIVERY_ZONES = @json($zones ?? []);
+        const DELIVERY_ZONES = @json($zones->toArray());
         let products = [...DEFAULT_PRODUCTS];
         let cart = [];
         let cartOpen = false;
@@ -256,7 +257,7 @@
                     <input type="radio" name="delivery_zone" value="${zone.id}" onchange="updateDeliveryZone(${zone.id}, ${zone.cost})" class="w-4 h-4 accent-blue-600">
                     <div class="flex-1">
                         <span class="text-sm font-black uppercase text-white">${zone.name}</span>
-                        <p class="text-xs text-blue-400">+$${zone.cost.toFixed(2)}</p>
+                        <p class="text-xs text-blue-400">+$${parseFloat(zone.cost).toFixed(2)}</p>
                     </div>
                 `;
                 zonesContainer.appendChild(label);
@@ -325,20 +326,20 @@
             }
 
             productsGrid.innerHTML = products.map(product => {
-                const priceBs = (product.price * TASA_CAMBIO).toFixed(0);
+                const priceBs = (product.price_usd * TASA_CAMBIO).toFixed(0);
                 return `
-                    <article class="group overflow-hidden rounded-lg border border-blue-600/30 bg-gradient-to-br from-white/5 to-white/[0.02] shadow-xl transition-all duration-300 hover:border-bl[...]
+                    <article class="group overflow-hidden rounded-lg border border-blue-600/30 bg-gradient-to-br from-white/5 to-white/[0.02] shadow-xl transition-all duration-300 hover:border-blue-600/80 hover:shadow-xl hover:shadow-blue-600/20">
                         <div class="relative h-64 overflow-hidden bg-gradient-to-br from-gray-900 to-black sm:h-72">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent flex items-center justify-center font-bold text-gray-600 text-xl">🍔 ${product.categor[...]
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent flex items-center justify-center font-bold text-gray-600 text-xl">🍔 ${product.category}</div>
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                            <span class="absolute left-4 top-4 rounded-lg border border-blue-400 bg-black/70 px-3 py-1 text-xs font-black uppercase tracking-widest text-blue-400">${product.tag}</[...]
+                            <span class="absolute left-4 top-4 rounded-lg border border-blue-400 bg-black/70 px-3 py-1 text-xs font-black uppercase tracking-widest text-blue-400">${product.tag || 'Premium'}</span>
                             <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
                                 <div class="max-w-[58%]">
-                                    <p class="text-xs font-black uppercase tracking-widest text-blue-400">${product.badge}</p>
+                                    <p class="text-xs font-black uppercase tracking-widest text-blue-400">${product.badge || '⭐'}</p>
                                     <h3 class="mt-1 text-2xl font-black uppercase leading-tight tracking-tight text-white sm:text-3xl">${product.name}</h3>
                                 </div>
                                 <div class="rounded-lg bg-blue-600 px-4 py-3 text-right text-white shadow-lg">
-                                    <p class="text-2xl font-black leading-none">$${product.price.toFixed(2)}</p>
+                                    <p class="text-2xl font-black leading-none">$${product.price_usd.toFixed(2)}</p>
                                     <div class="mt-2 border-t border-blue-400/30 pt-2">
                                         <p class="text-xs font-black leading-none">Bs ${priceBs}</p>
                                     </div>
@@ -347,9 +348,9 @@
                         </div>
                         <div class="p-5 sm:p-6">
                             <p class="min-h-[56px] text-sm leading-relaxed text-gray-300 sm:text-base">
-                                ${product.description}
+                                ${product.description || 'Deliciosa opción del menú'}
                             </p>
-                            <button type="button" onclick="addToCart(${product.id})" class="mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 font-black uppercase transition[...]
+                            <button type="button" onclick="addToCart(${product.id})" class="mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 font-black uppercase transition bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/30">
                                 Agregar al carrito
                             </button>
                         </div>
@@ -381,7 +382,7 @@
             if(existingItem) {
                 existingItem.quantity += 1;
             } else {
-                cart.push({ id: product.id, name: product.name, price: parseFloat(product.price), quantity: 1, note: '' });
+                cart.push({ id: product.id, name: product.name, price: parseFloat(product.price_usd), quantity: 1, note: '' });
             }
 
             updateCartUI();
@@ -474,9 +475,9 @@
 
                         <div class="flex items-center justify-between gap-2">
                             <div class="flex items-center gap-2 bg-white/5 rounded-lg p-1 border border-blue-600/20">
-                                <button onclick="changeQuantity(${item.id}, -1)" class="w-7 h-7 flex items-center justify-center font-black text-base hover:bg-blue-600/20 rounded transition">−<[...]
+                                <button onclick="changeQuantity(${item.id}, -1)" class="w-7 h-7 flex items-center justify-center font-black text-base hover:bg-blue-600/20 rounded transition">−</button>
                                 <span class="w-6 text-center font-black text-xs text-white">${item.quantity}</span>
-                                <button onclick="changeQuantity(${item.id}, 1)" class="w-7 h-7 flex items-center justify-center font-black text-base hover:bg-blue-600/20 rounded transition">+</bu[...]
+                                <button onclick="changeQuantity(${item.id}, 1)" class="w-7 h-7 flex items-center justify-center font-black text-base hover:bg-blue-600/20 rounded transition">+</button>
                             </div>
                             <label class="flex items-center gap-2 cursor-pointer">
                                 <input type="checkbox" class="w-4 h-4 accent-blue-600" onchange="document.getElementById('note-${index}').classList.toggle('hidden')">
@@ -486,7 +487,7 @@
                     </div>
 
                     <textarea id="note-${index}" placeholder="Ejemplo: Sin picante, sin cebolla..." 
-                        class="hidden w-full px-3 py-2 rounded-lg bg-white/5 border border-blue-600/30 text-white text-xs placeholder-gray-600 focus:outline-none focus:border-blue-600 focus:ring-[...]
+                        class="hidden w-full px-3 py-2 rounded-lg bg-white/5 border border-blue-600/30 text-white text-xs placeholder-gray-600 focus:outline-none focus:border-blue-600 focus:ring-blue-500"
                         rows="2" 
                         onchange="updateItemNote(${item.id}, this.value)"
                         onkeyup="updateItemNote(${item.id}, this.value)"></textarea>
