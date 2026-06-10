@@ -5,10 +5,48 @@
         <div class="mb-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
                 <p class="text-xs font-black uppercase tracking-[0.3em] text-blue-400">Panel administrativo</p>
-                <h1 class="mt-3 text-4xl font-black uppercase tracking-tight text-white">Editar productos del menú</h1>
-                <p class="mt-4 max-w-2xl text-sm leading-relaxed text-gray-300">Modifica nombres, descripciones, precios y categorías. Los productos se guardan en la base de datos SQLite del proyecto.</p>
+                <h1 class="mt-3 text-4xl font-black uppercase tracking-tight text-white">Dashboard</h1>
+                <p class="mt-4 max-w-2xl text-sm leading-relaxed text-gray-300">Gestiona todos los aspectos de tu restaurante desde aquí: productos, zonas de entrega y más.</p>
             </div>
-            <a href="{{ route('menu') }}" class="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-black uppercase tracking-widest text-white transition hover:bg-blue-700">Ver menú público</a>
+            <a href="{{ route('menu') }}" class="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-black uppercase tracking-widest text-white transition hover:bg-blue-700">
+                ← Volver al menú
+            </a>
+        </div>
+
+        <!-- Grid de opciones principales -->
+        <div class="grid gap-6 mb-10 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Opción: Gestionar Productos -->
+            <a href="#productos" class="group rounded-3xl border border-blue-600/30 bg-black/70 p-6 shadow-lg shadow-blue-900/10 transition hover:border-blue-500/50 hover:bg-black/50">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-black uppercase tracking-tight text-white group-hover:text-blue-300">Productos</h3>
+                        <p class="mt-2 text-sm text-gray-400">Edita nombres, precios y descripciones</p>
+                    </div>
+                    <span class="text-3xl">🍔</span>
+                </div>
+            </a>
+
+            <!-- Opción: Gestionar Zonas de Entrega -->
+            <a href="{{ route('admin.zones.index') }}" class="group rounded-3xl border border-green-600/30 bg-black/70 p-6 shadow-lg shadow-green-900/10 transition hover:border-green-500/50 hover:bg-black/50">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-black uppercase tracking-tight text-white group-hover:text-green-300">Zonas de Entrega</h3>
+                        <p class="mt-2 text-sm text-gray-400">Configura áreas y costos de delivery</p>
+                    </div>
+                    <span class="text-3xl">🚚</span>
+                </div>
+            </a>
+
+            <!-- Opción: Estadísticas (futura) -->
+            <a href="#" class="group rounded-3xl border border-purple-600/30 bg-black/70 p-6 shadow-lg shadow-purple-900/10 transition hover:border-purple-500/50 hover:bg-black/50">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-black uppercase tracking-tight text-white group-hover:text-purple-300">Estadísticas</h3>
+                        <p class="mt-2 text-sm text-gray-400">Próximamente...</p>
+                    </div>
+                    <span class="text-3xl">📊</span>
+                </div>
+            </a>
         </div>
 
         @if(session('success'))
@@ -28,7 +66,10 @@
             </div>
         @endif
 
-        <div class="space-y-6">
+        <!-- Sección de Productos -->
+        <div id="productos" class="space-y-6">
+            <h2 class="text-2xl font-black uppercase tracking-tight text-white mb-6">Editar Productos del Menú</h2>
+            
             @forelse($products as $product)
                 <form action="{{ route('admin.products.update', $product) }}" method="POST" class="rounded-3xl border border-blue-600/30 bg-black/70 p-6 shadow-lg shadow-blue-900/10">
                     @csrf
@@ -53,7 +94,7 @@
                             </label>
                             <label class="block">
                                 <span class="text-xs font-black uppercase tracking-widest text-gray-400">Categoría</span>
-                                <input name="category" value="{{ old('category', $product->category) }}" class="mt-2 w-full rounded-3xl border border-blue-600/30 bg-black/80 px-4 py-3 text-white focus:border-blue-400 focus:outline-none" required>
+                                <input name="category" value="{{ old('category', $product->category) }}" class="mt-2 w-full rounded-3xl border border-blue-600/30 bg-black/80 px-4 py-3 text-white focus:border-blue-400 focus:outline-none">
                             </label>
                             <label class="block">
                                 <span class="text-xs font-black uppercase tracking-widest text-gray-400">Etiqueta</span>
@@ -67,10 +108,14 @@
                     </div>
 
                     <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                        <button type="submit" class="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-black uppercase tracking-widest text-white transition hover:bg-blue-700">Actualizar</button>
+                        <button type="submit" class="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-black uppercase tracking-widest text-white transition hover:bg-blue-700">
+                            💾 Guardar cambios
+                        </button>
                         <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
                             <span class="text-xs uppercase tracking-widest text-gray-400">ID {{ $product->id }}</span>
-                            <button type="submit" form="delete-product-{{ $product->id }}" class="rounded-full border border-red-500/30 bg-red-500/10 px-5 py-3 text-sm font-black uppercase tracking-widest text-red-200 transition hover:bg-red-500/20">Eliminar</button>
+                            <button type="submit" form="delete-product-{{ $product->id }}" class="rounded-full border border-red-500/30 bg-red-500/10 px-5 py-3 text-sm font-black uppercase tracking-widest text-red-400 transition hover:bg-red-500/20">
+                                🗑️ Eliminar
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -107,7 +152,7 @@
                     </label>
                     <label class="block">
                         <span class="text-xs font-black uppercase tracking-widest text-gray-400">Categoría</span>
-                        <input name="category" value="{{ old('category') }}" class="mt-2 w-full rounded-3xl border border-blue-600/30 bg-black/80 px-4 py-3 text-white focus:border-blue-400 focus:outline-none" required>
+                        <input name="category" value="{{ old('category') }}" class="mt-2 w-full rounded-3xl border border-blue-600/30 bg-black/80 px-4 py-3 text-white focus:border-blue-400 focus:outline-none">
                     </label>
                     <label class="block">
                         <span class="text-xs font-black uppercase tracking-widest text-gray-400">Etiqueta</span>
@@ -117,7 +162,9 @@
                         <span class="text-xs font-black uppercase tracking-widest text-gray-400">Badge</span>
                         <input name="badge" value="{{ old('badge') }}" class="mt-2 w-full rounded-3xl border border-blue-600/30 bg-black/80 px-4 py-3 text-white focus:border-blue-400 focus:outline-none">
                     </label>
-                    <button type="submit" class="inline-flex items-center justify-center rounded-full bg-green-500 px-6 py-3 text-sm font-black uppercase tracking-widest text-black transition hover:bg-green-400">Agregar producto</button>
+                    <button type="submit" class="inline-flex items-center justify-center rounded-full bg-green-500 px-6 py-3 text-sm font-black uppercase tracking-widest text-black transition hover:bg-green-600 w-full">
+                        ➕ Crear Producto
+                    </button>
                 </div>
             </form>
         </div>
