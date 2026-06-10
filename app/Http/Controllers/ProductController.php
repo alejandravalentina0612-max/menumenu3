@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\DeliveryZone;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,7 +14,9 @@ class ProductController extends Controller
             ->orderBy('category')
             ->get();
 
-        return view('menu', compact('products'));
+        $zones = DeliveryZone::where('is_active', true)->get();
+
+        return view('menu', compact('products', 'zones'));
     }
 
     public function index()
